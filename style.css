@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box; /* paddingとborderを要素のwidthとheightに含む */
+}
+
+body {
+  font-family: 'Poppins' sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee;
+}
+
+.container {
+  /* padding: 1rem; */
+  width: 22rem;
+  background-color: #521262;
+  border-radius: 0.5rem;
+  box-shadow: 0 0 2rem reba(0, 0, 0, 0.3);
+  overflow: hidden; /*　要素からはみ出した部分を隠したり、スクロールできたりする */
+  position: relative;
+}
+
+.wrapper {
+  margin: 2rem 0;
+}
+
+.text {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  color: #fdfdfd;
+  text-align: center;
+}
+
+.emoji {
+  font-size: 1.3rem;
+  display: flex;
+  justify-content: center;
+}
+
+.emoji > div:not(:first-child) {
+  margin-left: 1rem;
+}
+
+.emoji > div {
+  cursor: pointer;
+  transition: transform 0.2s ease-in;
+}
+
+.emoji > div:hover {
+  transform: scale(1.4); /* hover時に拡大する */
+}
+
+.textarea {
+  width: 100%;
+  display: block;
+  background-color: rgb(59, 9, 59);
+  color: #eee;
+  border: none;
+  resize: none; /* textareaの拡大を禁止 */
+  outline: none; /* クリック時のアウトラインを無効化 */
+  height: 0;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.textarea--active {
+  padding: 1rem;
+  opacity: 1;
+  height: 6rem;
+}
+
+.btn {
+  text-decoration: none;
+  color: #eee;
+  border-radius: 4px;
+  padding: 0.4rem 1rem;
+  background-color: purple;
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: none;
+}
+
+.btn--active {
+  display: inline-block;
+}
